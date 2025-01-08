@@ -1,0 +1,25 @@
+.footer {
+  display: flex;
+  background-color: #2c2d35;
+  padding-top: 1%;
+}
+
+.p-footer,
+h4 {
+  color: white;
+  text-align: left;
+  margin-left: 30%;
+}
+
+.socialnetwork-icons {
+  display: flex;
+  justify-content: left;
+  margin-left: 30%;
+}
+
+#Linkedin,
+#Twitter,
+#Github {
+  padding-right: 2%;
+  height: 30px;
+}
