@@ -1,0 +1,15 @@
+.contact-top {
+  text-align: center;
+}
+
+.contact-bottom {
+  display: flex;
+  width: 75%;
+  justify-self: center;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  padding: 2%;
+  border: solid white;
+  box-shadow: lightgray -2px 3px 6px 2px;
+  text-align: left;
+}
