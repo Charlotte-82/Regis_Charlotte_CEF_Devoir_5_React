@@ -1,7 +1,6 @@
 import React from "react";
 import Banner from "./../assets/img/banner.jpg";
 import Brush from "./../assets/img/brush.svg";
-import "./../assets/css/services.css";
 import Code from "./../assets/img/code-slash.svg";
 import Search from "./../assets/img/search.svg";
 
