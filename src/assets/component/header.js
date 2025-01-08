@@ -6,8 +6,10 @@ function NavBar() {
   return (
     <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-          John Doe
+        <a class="navbar-brand">
+          <NavLink to="/" className="nav-link">
+            John Doe
+          </NavLink>
         </a>
         <button
           class="navbar-toggler"
