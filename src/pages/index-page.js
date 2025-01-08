@@ -27,18 +27,18 @@ function IndexPage() {
               id="johnDoeAbout"
             />
           </div>
-          <p>
+          <p class="text-center">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
             pulvinar ut augue id sollicitudin. Mauris luctus aliquet justo, nec
             varius diam aliquet a. Pellentesque vitae enim volutpat, tincidunt
             justo non, imperdiet leo.
           </p>
-          <p>
+          <p class="text-center">
             Sed lectus neque, tempor eu ex sit amet, dictum accumsan nunc.
             Vivamus venenatis, ex vitae accumsan molestie, massa est dictum
             tellus, quis fringilla sem dui quis arcu.
           </p>
-          <p>
+          <p class="text-center">
             Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
             posuere cubilia curae; Suspendisse tellus elit, egestas sed accumsan
             et, faucibus et velit. Fusce interdum nisl ac magna luctus rhoncus
