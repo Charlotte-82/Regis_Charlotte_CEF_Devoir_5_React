@@ -19,7 +19,7 @@ function IndexPage() {
       <div className="index-bottom">
         <div className="index-bottom-left" class="col-md-6">
           <h3>À propos</h3>
-          <hr></hr>
+          <hr class="border border-primary border-2 opacity-100" />
           <div className="portrait">
             <img
               src={johnDoeAbout}
@@ -47,7 +47,7 @@ function IndexPage() {
         </div>
         <div className="index-bottom-right" class="col-md-6">
           <h3>Mes compétences</h3>
-          <hr />
+          <hr class="border border-primary border-2 opacity-100" />
           <Levels />
         </div>
       </div>
