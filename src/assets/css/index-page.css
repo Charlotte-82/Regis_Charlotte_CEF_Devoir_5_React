@@ -1,0 +1,46 @@
+.index-top {
+  background-image: url(../img/hero-bg.jpg);
+  height: 100vh;
+  align-content: center;
+  color: white;
+}
+
+.index-button {
+  color: white;
+  text-decoration: none;
+}
+
+.index-bottom {
+  display: flex;
+  width: 65%;
+  justify-self: center;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  padding: 2%;
+  border: solid white;
+  box-shadow: lightgray -2px 3px 6px 2px;
+}
+
+#johnDoeAbout {
+  width: 90%;
+}
+
+.portrait {
+  justify-items: center;
+}
+
+hr {
+  color: blue;
+  width: 95%;
+  border: solid 2px;
+  justify-self: center;
+}
+
+.index-bottom-left {
+  padding-left: 20px;
+}
+
+p {
+  width: 95%;
+  text-align: center;
+}

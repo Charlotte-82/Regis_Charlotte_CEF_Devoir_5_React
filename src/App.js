@@ -1,6 +1,7 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import NavBar from "./assets/component/header";
+import Footer from "./assets/component/footer.js";
 import IndexPage from "./pages/index-page";
 import Portfolio from "./pages/portfolio.js";
 import Services from "./pages/services.js";
