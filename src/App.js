@@ -28,6 +28,7 @@ function App() {
           Mentions légales
         </Route>
       </Routes>
+      <Footer />
     </div>
   );
 }
