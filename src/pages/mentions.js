@@ -4,10 +4,14 @@ import Tel from "./../assets/img/phone.svg";
 import Mail from "./../assets/img/envelope.svg";
 import Map from "./../assets/img/map.svg";
 import Globe from "./../assets/img/globe.svg";
+// import { Helmet } from "react-helmet";
 
 function Mentions() {
   return (
     <div style={{ height: "70vh" }}>
+      {/* <Helmet>
+        <meta name="robots" content="noindex, ,nofollow" />
+      </Helmet> */}
       <h1>Mentions légales</h1>
       <hr
         class="border border-primary border-3 opacity-100"

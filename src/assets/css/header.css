@@ -1,3 +1,13 @@
 #navbarNav {
   justify-content: end;
 }
+
+.nav-link:hover,
+.nav-link:active {
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.nav-link {
+  text-transform: uppercase;
+}
