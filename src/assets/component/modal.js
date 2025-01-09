@@ -1,92 +1,108 @@
-import React, { useState } from "react";
+import React from "react";
+import { useState, useEffect } from "react";
 
-function Modal() {
-  const [show, setShow] = useState(false);
+const Modal = () => {
+  const [showModal, setShowModal] = useState(false);
+  const [profile, setProfile] = useState([]);
 
-  const handleShow = () => setShow(true);
-  const handleClose = () => setShow(false);
-
+  const fetchGithubData = async () => {
+    const res = await fetch("https://api.github.com/users/github-john-doe");
+    const data = await res.json();
+    setProfile(data);
+  };
+  useEffect(() => {
+    fetchGithubData();
+  });
   return (
     <div>
-      <button type="button" class="btn btn-danger">
-        <a href="#" onClick={handleShow}>
-          En savoir plus
-        </a>
+      <button className="btn btn-danger" onClick={() => setShowModal(true)}>
+        En savoir plus
       </button>
-      {show && (
+      <div
+        className="modal show d-bloc"
+        tabIndex="-1"
+        style={{ display: showModal ? "block" : "none" }}
+      >
+        {" "}
         <div
-          className="modal show d-block"
-          tabIndex="-1"
-          style={{ backgroundColor: "rgba(0,0,0,0.5" }}
+          className="modal-dialog modal-dialog-centered"
+          style={{ maxWidth: "80%" }}
         >
-          <div className="modal-dialog">
+          <div className="modal-content bg-dark text-light">
             <div
-              className="modal-content"
-              style={{
-                backgroundColor: "rgba(42,42,48,1)",
-                borderColor: "rgba(113,113,113,1)",
-              }}
+              className="modal-header"
+              style={{ borderColor: "rgba(113,113,113,1)" }}
             >
-              <div
-                className="modal-header"
-                style={{
-                  borderColor: "rgba(113,113,113,1)",
-                }}
+              {" "}
+              <h3 className="modal-title">Mon profil GitHub</h3>
+              <button
+                type="button"
+                className="btn-close"
+                onClick={() => setShowModal(false)}
+              ></button>
+            </div>
+            <div className="modal-body ">
+              <div className="container">
+                <div className="row">
+                  <div className="col-md-6 col-12 text-center ">
+                    <img
+                      src={profile.avatar_url}
+                      alt="Avatar Github"
+                      className="img-fluid profile-img mb-3"
+                    ></img>
+                  </div>
+                  <div className="col-md-6 col-12 text-start">
+                    <ul className="list-unstyled mb-2">
+                      <li className="border-bottom border-secondary-subtle mb-3 ">
+                        <i className=" bi bi-person me-1"></i>
+                        <a
+                          href={profile.html_url || "Aucun nom spécifié"}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {profile.name}
+                        </a>
+                      </li>
+                      <li className="border-bottom border-secondary-subtle mb-3 ">
+                        <i className=" bi bi-geo-alt me-1"></i>
+                        {profile.location || ""}{" "}
+                      </li>
+                      <li className="border-bottom border-secondary-subtle mb-3">
+                        <i className=" bi bi-card-text me-1"></i>
+                        {profile.bio || "Aucune biographie disponible"}
+                      </li>
+                      <li className="border-bottom border-secondary-subtle mb-3">
+                        <i className=" bi bi-box me-1"></i>Repositories :{" "}
+                        {profile.public_repos}
+                      </li>
+                      <li className="border-bottom border-secondary-subtle mb-3">
+                        <i className="bi bi-people me-1"></i>Followers :{" "}
+                        {profile.followers}
+                      </li>
+                      <li>
+                        <i className="bi bi-people me-1"></i>Following :
+                        {profile.following}
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className="modal-footer"
+              style={{ borderColor: "rgba(113, 113, 113, 1)" }}
+            >
+              <button
+                className="btn btn-secondary"
+                onClick={() => setShowModal(false)}
               >
-                <h5 className="modal-title">Mon profil GitHub</h5>
-                <button
-                  type="button"
-                  className="btn-close btn-secondary"
-                  onClick={handleClose}
-                ></button>
-              </div>
-              <div className="modal-body">
-                <p>Contenu de la modale</p>
-              </div>
-              <div
-                className="modal-footer"
-                style={{
-                  borderColor: "rgba(113,113,113,1)",
-                }}
-              >
-                <button
-                  type="button"
-                  className="btn btn-secondary"
-                  onClick={handleClose}
-                >
-                  Fermer
-                </button>
-              </div>
+                Fermer
+              </button>
             </div>
           </div>
         </div>
-      )}
+      </div>
     </div>
-    // <div class="modal-body">
-    //   <div class="container-fluid">
-    //     <div class="row">
-    //       <div class="col-md-4">.col-md-4</div>
-    //       <div class="col-md-4 ms-auto">.col-md-4 .ms-auto</div>
-    //     </div>
-    //     <div class="row">
-    //       <div class="col-md-3 ms-auto">.col-md-3 .ms-auto</div>
-    //       <div class="col-md-2 ms-auto">.col-md-2 .ms-auto</div>
-    //     </div>
-    //     <div class="row">
-    //       <div class="col-md-6 ms-auto">.col-md-6 .ms-auto</div>
-    //     </div>
-    //     <div class="row">
-    //       <div class="col-sm-9">
-    //         Level 1: .col-sm-9
-    //         <div class="row">
-    //           <div class="col-8 col-sm-6">Level 2: .col-8 .col-sm-6</div>
-    //           <div class="col-4 col-sm-6">Level 2: .col-4 .col-sm-6</div>
-    //         </div>
-    //       </div>
-    //     </div>
-    //   </div>
-    // </div>
   );
-}
-
+};
 export default Modal;
