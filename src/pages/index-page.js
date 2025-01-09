@@ -2,7 +2,7 @@ import React from "react";
 import "./../assets/css/index-page.css";
 import johnDoeAbout from "./../assets/img/john-doe-about.jpg";
 import Levels from "./../assets/component/progress.js";
-import Footer from "./../assets/component/footer.js";
+import Modal from "./../assets/component/modal.js";
 
 function IndexPage() {
   return (
@@ -10,11 +10,8 @@ function IndexPage() {
       <div className="index-top">
         <h1>Bonjour, je suis John Doe,</h1>
         <h2>Developper Web Full Stack</h2>
-        <button type="button" class="btn btn-danger">
-          <a className="index-button" href="#">
-            En savoir plus
-          </a>
-        </button>
+
+        <Modal />
       </div>
       <div className="index-bottom">
         <div className="index-bottom-left" class="col-md-6">
